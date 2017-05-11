@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 
 // Database
-mongoose.connect('mongodb://localhost');
+mongoose.connect('mongodb://localhost/shifts');
 
 // Middleware
 var morgan = require('morgan');
