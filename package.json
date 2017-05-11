@@ -1,0 +1,19 @@
+{
+  "name": "shift-scheduler",
+  "version": "1.0.0",
+  "description": "shift scheduler for restaurants",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chououtside/tasty-waffle.git"
+  },
+  "author": "Alex Chou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chououtside/tasty-waffle/issues"
+  },
+  "homepage": "https://github.com/chououtside/tasty-waffle#readme"
+}
