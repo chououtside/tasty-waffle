@@ -1,8 +1,13 @@
 var express = require('express');
+var mongoose = require('mongoose');
+
+// Database
+mongoose.connect('mongodb://localhost');
 
 // Middleware
 var morgan = require('morgan');
 var parser = require('body-parser');
+
 
 var app = express();
 module.exports.app = app;
