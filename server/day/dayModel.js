@@ -5,14 +5,14 @@ var daySchema = mongoose.Schema({
   lunch: {
     required: Number,
     staff: [String],
-    standBy: {},
-    manager: {}
+    standBy: String,
+    manager: String
   },
   dinner: {
     required: Number,
     staff: [String],
-    standBy: {},
-    manager: {}
+    standBy: String,
+    manager: String
   }
 })
 
