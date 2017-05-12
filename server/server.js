@@ -19,6 +19,10 @@ app.use(morgan('dev'));
 app.use(parser.urlencoded({extended: true}));
 app.use(parser.json());
 
+// Router
+var router = require('./config/routes');
+app.use(router);
+
 // Serve the client files
 app.use(express.static(__dirname + '/../client'));
 
