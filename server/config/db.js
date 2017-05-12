@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var Days = require('../day/dayModel');
+
 
 var initializeDays = function() {
   var days = [],
@@ -33,4 +35,22 @@ var initializeDays = function() {
     day.dinner = dinner;
     days.push(day);
   }
+
+  return days;
 }
+
+//initialize static database tables if they do not exist
+var initializeDb = function() {
+  var days = initializeDays();
+  Days.find({}, function(err, day) {
+    if (!day.length) {
+      Days.create(days, function(err) {
+        if (!err) {
+          console.log('Created Empty Days Template in DB.')
+        } else {
+          console.log('error:', err);
+        }
+      });
+    }
+  });
+}();

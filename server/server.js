@@ -1,5 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var db = require('./config/db')
 
 // Database
 mongoose.connect('mongodb://localhost/shifts');
