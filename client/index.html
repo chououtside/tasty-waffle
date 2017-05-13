@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="shiftmanager">
 <head>
 	<meta charset="UTF-8">
 	<title>New Dynasty Shift Manager</title>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="days/days.js"></script>
+	<script src="app.js"></script>
 </head>
 <body>
-	<h1>Shift Manager</h1>
+	<div ng-view></div>
 </body>
 </html>
