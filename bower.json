@@ -1,0 +1,22 @@
+{
+  "name": "shift-scheduler",
+  "description": "shift scheduler for restaurants",
+  "main": "server/server.js",
+  "authors": [
+    "Alex Chou"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/chououtside/tasty-waffle",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.6.4",
+    "angular-route": "~1.6.4"
+  }
+}
