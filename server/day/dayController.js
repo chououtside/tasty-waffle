@@ -2,6 +2,7 @@ var Days = require('./dayModel')
 var Q = require('q');
 
 var findDays = Q.nbind(Days.find, Days);
+var findDay = Q.nbind(Days.findOne, Days);
 
 module.exports = {
   findDays: function(req, res, next) {
@@ -12,5 +13,21 @@ module.exports = {
       .fail(function(error){
         next(error);
       })
+  },
+
+  updateStaff: function(req, res, next) {
+    var shift = req.body.shift.toLowerCase(),
+      staff = req.body.staffArray;
+      
+    findDay({day: req.params.day})
+    .then(function(day){
+      day[shift].staff = staff;
+      day.markModified(shift);
+      day.save()
+      res.send(day);
+    })
+    .fail(function(error){
+      next(error);
+    })
   }
 }
