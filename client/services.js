@@ -10,10 +10,10 @@ angular.module('services', [])
     });
   };
 
-  var addStaff = function(day, staffArray, shift) {
+  var updateStaff = function(day, staffArray, shift) {
     return $http({
       method: 'PUT',
-      url: 'api/' + day + '/staff',
+      url: 'api/' + day + '/update/staff',
       data: {
         day: day,
         staffArray: staffArray,
@@ -27,6 +27,6 @@ angular.module('services', [])
 
   return {
     initializeDays: initializeDays,
-    addStaff: addStaff
+    updateStaff: updateStaff
   };
 });

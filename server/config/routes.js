@@ -3,7 +3,7 @@ var userController = require('../users/userController');
 var dayController = require('../day/dayController');
 
 router.get('/api/days', dayController.findDays);
-router.put('/api/:day/staff', dayController.updateStaff);
+router.put('/api/:day/update/staff', dayController.updateStaff);
 
 router.get('/api/users', userController.findUsers);
 
