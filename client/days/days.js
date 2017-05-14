@@ -1,6 +1,9 @@
 angular.module('shiftmanager.days', [])
-.controller('daysController', function($scope){
-  $scope.days = [{"_id":"5916009f08dc9108639918fd","day":"Monday","__v":0,"dinner":{"required":5,"standby":"","manager":"","staff":[]},"lunch":{"required":4,"standby":"","manager":"","staff":[]}},{"_id":"5916009f08dc9108639918fe","day":"Tuesday","__v":0,"dinner":{"required":5,"standby":"","manager":"","staff":[]},"lunch":{"required":4,"standby":"","manager":"","staff":[]}},{"_id":"5916009f08dc9108639918ff","day":"Wednesday","__v":0,"dinner":{"required":5,"standby":"","manager":"","staff":[]},"lunch":{"required":4,"standby":"","manager":"","staff":[]}},{"_id":"5916009f08dc910863991901","day":"Friday","__v":0,"dinner":{"required":5,"standby":"","manager":"","staff":[]},"lunch":{"required":4,"standby":"","manager":"","staff":[]}},{"_id":"5916009f08dc910863991900","day":"Thursday","__v":0,"dinner":{"required":5,"standby":"","manager":"","staff":[]},"lunch":{"required":4,"standby":"","manager":"","staff":[]}},{"_id":"5916009f08dc910863991902","day":"Saturday","__v":0,"dinner":{"required":5,"standby":"","manager":"","staff":[]},"lunch":{"required":3,"standby":"","manager":"","staff":[]}},{"_id":"5916009f08dc910863991903","day":"Sunday","__v":0,"dinner":{"required":5,"standby":"","manager":"","staff":[]},"lunch":{"required":3,"standby":"","manager":"","staff":[]}}];
+.controller('daysController', function($scope, dayService){
+  dayService.initializeDays()
+  .then(function(data){
+    $scope.days = data;
+  });
 });
 
 
