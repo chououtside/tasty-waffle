@@ -1,4 +1,4 @@
-angular.module('shiftmanager', ['ngRoute', 'shiftmanager.days'])
+angular.module('shiftmanager', ['ngRoute', 'shiftmanager.days', 'shiftmanager.shift'])
 .config(['$locationProvider', function($locationProvider) {
   $locationProvider.hashPrefix('');
 }])
