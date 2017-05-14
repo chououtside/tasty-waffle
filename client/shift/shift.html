@@ -20,25 +20,25 @@
     </div>
   
 		<div class="form-group">
-		  <label for="sel1">Standby:</label>
-		  <select class="form-control" id="sel1">
+		  <label for="lunch">Standby:</label>
+		  <select class="form-control" id="lunch" ng-model="standby" ng-change="updateDropdown('standby')" ng-init="standby = shiftObject.standby || ''">
 		    <option></option>
-		    <option>Alex</option>
-		    <option>William</option>
-		    <option>Jimmy</option>
-		    <option>Jeff</option>
+		    <option value="alex">Alex</option>
+		    <option value="william">William</option>
+		    <option value="jimmy">Jimmy</option>
+		    <option value="jeff">Jeff</option>
 		  </select>
 		</div>
 		  
-		<div class="form-group">
-		  <label for="sel1">Manager:</label>
-		  <select class="form-control" id="sel1">
-		    <option></option>
-		    <option>Alex</option>
-		    <option>William</option>
-		    <option>Jimmy</option>
-		    <option>Jeff</option>
-		  </select>
-		</div>
+    <div class="form-group">
+      <label for="dinner">Manager:</label>
+      <select class="form-control" id="dinner" ng-model="manager" ng-change="updateDropdown('manager')" ng-init="manager = shiftObject.manager || ''">
+        <option></option>
+        <option value="alex">Alex</option>
+        <option value="william">William</option>
+        <option value="jimmy">Jimmy</option>
+        <option value="jeff">Jeff</option>
+      </select>
+    </div>
   </div>
 </div>

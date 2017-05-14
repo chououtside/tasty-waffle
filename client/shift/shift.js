@@ -19,7 +19,14 @@ angular.module('shiftmanager.shift', [])
         var member = arr.splice(index, 1);
         dayService.updateStaff($scope.dayTitle, arr, $scope.title)
       }
-
+      
+      $scope.updateDropdown = function(type) {
+        if (type === 'manager') {
+          dayService.updateManagement(type, $scope.manager, $scope.dayTitle, $scope.title);
+        } else {
+          dayService.updateManagement(type, $scope.standby, $scope.dayTitle, $scope.title);
+        }
+      }
     }
   }
 });
