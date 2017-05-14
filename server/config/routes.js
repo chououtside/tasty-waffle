@@ -4,6 +4,7 @@ var dayController = require('../day/dayController');
 
 router.get('/api/days', dayController.findDays);
 router.put('/api/:day/update/staff', dayController.updateStaff);
+router.put('/api/:day/update/management', dayController.updateManagement);
 
 router.get('/api/users', userController.findUsers);
 

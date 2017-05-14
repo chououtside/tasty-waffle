@@ -29,5 +29,22 @@ module.exports = {
     .fail(function(error){
       next(error);
     })
+  },
+
+  updateManagement: function(req, res, next) {
+    var shift = req.body.shift.toLowerCase(),
+      type = req.body.type,
+      name = req.body.name;
+      
+    findDay({day: req.params.day})
+    .then(function(day){
+      day[shift][type] = name;
+      day.markModified(shift);
+      day.save()
+      res.send(day);
+    })
+    .fail(function(error){
+      next(error);
+    })
   }
 }
