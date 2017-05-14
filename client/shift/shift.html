@@ -1,4 +1,4 @@
-<div class="panel panel-default ">
+<div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">{{ title }}</h3>
   </div>
@@ -6,12 +6,19 @@
     <div>Req: {{ shiftObject.required }}</div>
     <div>
     	Staff
-    	<div ng-repeat="member in shiftObject.staff">
+    	<div ng-repeat="member in shiftObject.staff track by $index">
     		<a href='javascript:void(0)'><span class="glyphicon glyphicon-minus remove-btn"></span></a>
     		{{ member }}
     	</div>
-    </div>
 
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Ex. Sam, Bob, Sue" ng-model="staff" ng-keyup="$event.keyCode == 13 ? add() : null">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" ng-click="add()">Add</button>
+        </span>
+      </div>
+    </div>
+  
 		<div class="form-group">
 		  <label for="sel1">Standby:</label>
 		  <select class="form-control" id="sel1">
