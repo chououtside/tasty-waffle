@@ -15,8 +15,22 @@ angular.module('services', [])
       method: 'PUT',
       url: 'api/' + day + '/update/staff',
       data: {
-        day: day,
         staffArray: staffArray,
+        shift: shift
+      }
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
+  };
+
+  var updateManagement = function(type, name, day, shift) {
+    return $http({
+      method: 'PUT',
+      url: 'api/' + day + '/update/management',
+      data: {
+        type: type,
+        name: name,
         shift: shift
       }
     })
@@ -27,6 +41,7 @@ angular.module('services', [])
 
   return {
     initializeDays: initializeDays,
-    updateStaff: updateStaff
+    updateStaff: updateStaff,
+    updateManagement: updateManagement
   };
 });
