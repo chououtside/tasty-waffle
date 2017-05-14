@@ -3,6 +3,7 @@ angular.module('shiftmanager.shift', [])
   return {
     templateUrl: 'shift/shift.html',
     scope: {
+      title: '@',
       shiftObject: '='
     }
   }
