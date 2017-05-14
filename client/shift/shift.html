@@ -1,0 +1,37 @@
+<div class="panel panel-default ">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ shiftObject.title }}</h3>
+  </div>
+  <div class="panel-body">
+    <div>Req: {{ shiftObject.required }}</div>
+    <div>
+    	Staff
+    	<div ng-repeat="member in shiftObject.staff">
+    		<a href='javascript:void(0)'><span class="glyphicon glyphicon-minus remove-btn"></span></a>
+    		{{ member }}
+    	</div>
+    </div>
+
+		<div class="form-group">
+		  <label for="sel1">Standby:</label>
+		  <select class="form-control" id="sel1">
+		    <option></option>
+		    <option>Alex</option>
+		    <option>William</option>
+		    <option>Jimmy</option>
+		    <option>Jeff</option>
+		  </select>
+		</div>
+		  
+		<div class="form-group">
+		  <label for="sel1">Manager:</label>
+		  <select class="form-control" id="sel1">
+		    <option></option>
+		    <option>Alex</option>
+		    <option>William</option>
+		    <option>Jimmy</option>
+		    <option>Jeff</option>
+		  </select>
+		</div>
+  </div>
+</div>
