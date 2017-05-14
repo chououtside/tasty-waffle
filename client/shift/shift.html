@@ -7,7 +7,7 @@
     <div>
     	Staff
     	<div ng-repeat="member in shiftObject.staff track by $index">
-    		<a href='javascript:void(0)'><span class="glyphicon glyphicon-minus remove-btn"></span></a>
+    		<a href='javascript:void(0)'><span class="glyphicon glyphicon-minus remove-btn" ng-click="remove(shiftObject.staff, $index)"></span></a>
     		{{ member }}
     	</div>
 

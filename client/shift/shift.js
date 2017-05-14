@@ -10,10 +10,14 @@ angular.module('shiftmanager.shift', [])
     },
     controller: function ($scope, dayService) {
       $scope.add = function() {
-        var arrayCopy = $scope.shiftObject.staff.slice().push($scope.staff);
         $scope.shiftObject.staff.push($scope.staff);
-        dayService.addStaff($scope.dayTitle, $scope.staff, $scope.title)
+        dayService.updateStaff($scope.dayTitle, $scope.shiftObject.staff, $scope.title)
         $scope.staff = '';
+      }
+
+      $scope.remove = function(arr, index) {
+        var member = arr.splice(index, 1);
+        dayService.updateStaff($scope.dayTitle, arr, $scope.title)
       }
 
     }
