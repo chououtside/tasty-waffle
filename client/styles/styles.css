@@ -30,3 +30,8 @@
     *width: 14.285714285714285714285714285714%;
   }
 }
+
+.remove-btn {
+  color: red;
+  margin-right: 5px;
+}
