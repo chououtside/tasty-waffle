@@ -12,16 +12,16 @@
     	</div>
 
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Ex. Sam, Bob, Sue" ng-model="staff" ng-keyup="$event.keyCode == 13 ? add() : null">
+        <input type="text" class="form-control input-sm" placeholder="Ex. Sam, Bob, Sue" ng-model="staff" ng-keyup="$event.keyCode == 13 ? add() : null">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button" ng-click="add()">Add</button>
+          <button class="btn btn-default btn-sm" type="button" ng-click="add()">Add</button>
         </span>
       </div>
     </div>
   
 		<div class="form-group">
 		  <label for="lunch">Standby:</label>
-		  <select class="form-control" id="lunch" ng-model="standby" ng-change="updateDropdown('standby')" ng-init="standby = shiftObject.standby || ''">
+		  <select class="form-control input-sm" id="lunch" ng-model="standby" ng-change="updateDropdown('standby')" ng-init="standby = shiftObject.standby || ''">
 		    <option></option>
 		    <option value="alex">Alex</option>
 		    <option value="william">William</option>
@@ -32,7 +32,7 @@
 		  
     <div class="form-group">
       <label for="dinner">Manager:</label>
-      <select class="form-control" id="dinner" ng-model="manager" ng-change="updateDropdown('manager')" ng-init="manager = shiftObject.manager || ''">
+      <select class="form-control input-sm" id="dinner" ng-model="manager" ng-change="updateDropdown('manager')" ng-init="manager = shiftObject.manager || ''">
         <option></option>
         <option value="alex">Alex</option>
         <option value="william">William</option>
