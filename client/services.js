@@ -6,7 +6,31 @@ angular.module('services', [])
       url: 'api/days'
     })
     .then(function (resp){
-      return resp.data;
+      var days = resp.data;
+      // Calculates count of employees for each shift 
+      for (var i = 0; i < days.length; i++) {
+        var lunch = days[i].lunch;
+        var dinner = days[i].dinner;
+
+        var count = lunch.staff.length;
+        if (lunch.standby) {
+          count += 1;
+        }
+        if (lunch.manager) {
+          count += 1;
+        }
+        lunch.count = count
+
+        count = dinner.staff.length;
+        if (dinner.standby) {
+          count += 1;
+        }
+        if (dinner.manager) {
+          count += 1;
+        }
+        dinner.count = count
+      }
+      return days;
     });
   };
 
