@@ -1,5 +1,5 @@
 .col-md-1 {
-  background-color: gold;
+  /*background-color: gold;*/
 }
 
 @media (min-width: 768px){
@@ -34,4 +34,14 @@
 .remove-btn {
   color: red;
   margin-right: 5px;
+}
+
+.panel-danger div.panel-heading {
+  background-color: #ff3333;
+  color: white;
+}
+
+.panel-success div.panel-heading {
+  background-color: #008000;
+  color:white;
 }
