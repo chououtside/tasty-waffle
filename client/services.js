@@ -20,6 +20,7 @@ angular.module('services', [])
           count += 1;
         }
         lunch.count = count
+        updateColorStatus(lunch);
 
         count = dinner.staff.length;
         if (dinner.standby) {
@@ -29,7 +30,10 @@ angular.module('services', [])
           count += 1;
         }
         dinner.count = count
+        updateColorStatus(dinner);
       }
+
+
       return days;
     });
   };
@@ -62,6 +66,16 @@ angular.module('services', [])
       return resp.data;
     });
   };
+
+  var updateColorStatus = function(shift) {
+    if (shift.count < shift.required || !shift.manager) {
+      shift.status = 'panel-danger';
+    } else if (shift.count === shift.required) {
+      shift.status = 'panel-success';
+    } else {
+      shift.status = 'panel-primary';
+    }
+  }
 
   return {
     initializeDays: initializeDays,
