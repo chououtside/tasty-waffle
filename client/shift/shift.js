@@ -11,12 +11,16 @@ angular.module('shiftmanager.shift', [])
     controller: function ($scope, dayService) {
       $scope.add = function() {
         $scope.shiftObject.staff.push($scope.staff);
+        $scope.shiftObject.count = $scope.shiftObject.count + 1;
+        dayService.updateColorStatus($scope.shiftObject);
         dayService.updateStaff($scope.dayTitle, $scope.shiftObject.staff, $scope.title)
         $scope.staff = '';
       }
 
       $scope.remove = function(arr, index) {
         var member = arr.splice(index, 1);
+        $scope.shiftObject.count = $scope.shiftObject.count - 1;
+        dayService.updateColorStatus($scope.shiftObject);
         dayService.updateStaff($scope.dayTitle, arr, $scope.title)
       }
       
