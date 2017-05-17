@@ -20,7 +20,27 @@ angular.module('shiftmanager.shift', [])
         dayService.updateStaff($scope.dayTitle, arr, $scope.title)
       }
       
-      $scope.updateDropdown = function(type) {
+      $scope.updateDropdown = function(type, newValue, oldvalue) {
+        // Update Count
+        if (newValue === '') {
+          $scope.shiftObject.count = $scope.shiftObject.count - 1;
+          dayService.updateColorStatus($scope.shiftObject);
+        }
+        if (oldvalue === '') {
+          $scope.shiftObject.count = $scope.shiftObject.count + 1;
+          dayService.updateColorStatus($scope.shiftObject);
+        }
+        
+        if ($scope.manager === $scope.standby) {
+          $scope.shiftObject.count = $scope.shiftObject.count - 1;
+          dayService.updateColorStatus($scope.shiftObject);
+        }
+        if (oldvalue === $scope.manager || oldvalue === $scope.standby) {
+          $scope.shiftObject.count = $scope.shiftObject.count + 1;
+          dayService.updateColorStatus($scope.shiftObject);
+        }
+
+        // Updates Database
         if (type === 'manager') {
           dayService.updateManagement(type, $scope.manager, $scope.dayTitle, $scope.title);
         } else {
