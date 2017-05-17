@@ -19,6 +19,9 @@ angular.module('services', [])
         if (lunch.manager) {
           count += 1;
         }
+        if (lunch.manager === lunch.standby) {
+          count -=1;
+        }
         lunch.count = count
         updateColorStatus(lunch);
 
@@ -29,11 +32,12 @@ angular.module('services', [])
         if (dinner.manager) {
           count += 1;
         }
+        if (dinner.manager === dinner.standby) {
+          count -=1;
+        }
         dinner.count = count
         updateColorStatus(dinner);
       }
-
-
       return days;
     });
   };
@@ -80,6 +84,7 @@ angular.module('services', [])
   return {
     initializeDays: initializeDays,
     updateStaff: updateStaff,
-    updateManagement: updateManagement
+    updateManagement: updateManagement,
+    updateColorStatus: updateColorStatus
   };
 });
